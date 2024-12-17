@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@firebase/data-connect": "^0.1.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -17,10 +16,7 @@
     "cors": "^2.8.5",
     "emailjs-com": "^3.2.0",
     "express": "^4.21.2",
-    "firebase": "^11.0.2",
     "json-server": "^1.0.0-beta.3",
-    "jsonwebtoken": "^9.0.2",
-    "mongodb": "^6.11.0",
     "mysql": "^2.18.1",
     "net": "^1.0.2",
     "node-polyfill-webpack-plugin": "^4.0.0",
