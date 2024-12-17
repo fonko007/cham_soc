@@ -1,5 +1,6 @@
 {
   "name": "cham_soc",
+  "homepage": "https://cssuckhoe.xyz",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -33,10 +34,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "serve -s build",
     "server": "node database/Server.js"
   },
   "eslintConfig": {
