@@ -10,10 +10,10 @@ app.use(express.json());
 
 // MySQL connection configuration
 const dbConfig = {
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'chamsoc'
+  host: 'localhost:3306',
+  user: 'css72456_snowy',
+  password: 'Lamvannhut123@',
+  database: 'css72456_chamsoc'
 };
 
 let db;
