@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.register-form {
+  background: #fff;
+  width: 400px;
+  margin: 65px auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+
+.register-form h1 {
+  padding: 35px 35px 0 35px;
+  font-weight: 300;
+}
+
+.register-form .content {
+  padding: 35px;
+  text-align: center;
+}
+
+.register-form .input-field {
+  padding: 12px 5px;
+}
+
+.register-form .input-field input {
+  font-size: 16px;
+  display: block;
+  font-family: 'Rubik', sans-serif;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.register-form .input-field input:focus {
+  border-color: #222;
+}
+
+.register-form .action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.register-form .action button {
+  width: 100%;
+  border: none;
+  padding: 18px;
+  font-family: 'Rubik', sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: #2d3b55;
+  color: #fff;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.register-form .action button:hover {
+  background: #3c4d6d;
+}
+
+.register-form .error {
+  color: red;
+  margin-top: 15px;
+}
+
+.register-form .success {
+  color: green;
+  margin-top: 15px;
+}
+.cancel-button { 
+  display: inline-block; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  color: #fff; 
+  background-color: #f44336; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+} .cancel-button:hover { 
+  background-color: #d32f2f; } 
+.cancel-button:focus { 
+  outline: none; }
