@@ -35,7 +35,7 @@ const Login = () => {
 
   const loginUser = async (credentials) => {
     try {
-      const response = await axios.post('http://localhost:5000/login', credentials);
+      const response = await axios.post('http://localhost:3306/login', credentials);
       return response.data;
     } catch (error) {
       console.error('Error logging in:', error);
