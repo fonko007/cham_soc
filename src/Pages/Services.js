@@ -35,7 +35,7 @@ const Services = () => {
     const postdata = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3306/bookings', values);
+            const response = await axios.post('http://localhost:5000/bookings', values);
             if (response.status === 201) {
                 toast.success('Gửi thông tin thành công');
                 emailjs
