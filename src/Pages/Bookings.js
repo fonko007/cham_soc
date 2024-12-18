@@ -20,7 +20,7 @@ const Bookings = () => {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/booked', { params: { email: email }});
+        const response = await axios.get('http://s88d104.cloudnetwork.vn:5000/booked', { params: { email: email }});
         setBookings(response.data);
       } catch (error) {
         console.error('Error fetching bookings:', error);
@@ -28,7 +28,7 @@ const Bookings = () => {
     };
     const fetchAccountData = async () => { 
       try { 
-        const response = await axios.get('http://localhost:5000/account', { params: { email: email } });
+        const response = await axios.get('http://s88d104.cloudnetwork.vn:5000/account', { params: { email: email } });
         setAccount(response.data); 
       } catch (error) { 
         console.error('Error fetching account data:', error); 

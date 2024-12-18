@@ -22,7 +22,7 @@ const Dashboard = () => {
       }
 
       try {
-        const response = await axios.get('http://localhost:5000/account', { 
+        const response = await axios.get('http://s88d104.cloudnetwork.vn:5000/account', { 
           params: { email: email }
         });
         

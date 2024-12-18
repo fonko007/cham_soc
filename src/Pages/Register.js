@@ -37,7 +37,7 @@ const Register = () => {
     setError('');
     setSuccess('');
     try {
-      const response = await axios.post('http://localhost:5000/register', user);
+      const response = await axios.post('http://s88d104.cloudnetwork.vn:5000/register', user);
       if (response.data.success) {
         setSuccess('Registration successful!');
         setUser({ username: '', email: '', password: '', role: 'user' });

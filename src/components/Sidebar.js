@@ -55,19 +55,19 @@ const Sidebar = () => {
             <li className={`menu-item ${location.pathname === '/dashboard' ? 'active' : ''}`}>
               <Link to="/dashboard" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <RiDashboardLine className="menu-icon" />
-                <span>Dashboard</span>
+                <span>Trang Chính</span>
               </Link>
             </li>
             <li className={`menu-item ${location.pathname === '/services' ? 'active' : ''}`}>
               <Link to="/services" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <RiShoppingBag3Line className="menu-icon" />
-                <span>My Orders</span>
+                <span>Đặt Lịch</span>
               </Link>
             </li>
-            <li className={`menu-item ${location.pathname === '/explore' ? 'active' : ''}`}>
-              <Link to="/explore" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
+            <li className={`menu-item ${location.pathname === '/news' ? 'active' : ''}`}>
+              <Link to="/news" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <RiCompassDiscoverLine className="menu-icon" />
-                <span>Explore</span>
+                <span>Bài Viết</span>
               </Link>
             </li>
             <li className={`menu-item ${location.pathname === '/products' ? 'active' : ''}`}>
