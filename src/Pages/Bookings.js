@@ -28,7 +28,7 @@ const Bookings = () => {
     };
     const fetchAccountData = async () => { 
       try { 
-        const response = await axios.get('http://s88d104.cloudnetwork.vn:5000/account', { params: { email: email } });
+        const response = await axios.get('https://s88d104.cloudnetwork.vn:5000/account', { params: { email: email } });
         setAccount(response.data); 
       } catch (error) { 
         console.error('Error fetching account data:', error); 

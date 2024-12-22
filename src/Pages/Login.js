@@ -35,7 +35,7 @@ const Login = () => {
 
   const loginUser = async (credentials) => {
     try {
-      const response = await axios.post('http://s88d104.cloudnetwork.vn:5000/login', credentials);
+      const response = await axios.post('https://localhost:1234/login', credentials);
       return response.data;
     } catch (error) {
       console.error('Error logging in:', error);
@@ -89,14 +89,14 @@ const Login = () => {
                 <label htmlFor="email">Tài Khoản Email</label>
                 <div className="input flex">
                   <FaUserShield className='icon'/>
-                  <input type="email" placeholder='Nhập Email' name="email" autoComplete="nope" value={credentials.email} onChange={handleChange} required/>
+                  <input type="email" placeholder='Nhập Email' name="email" value={credentials.email} onChange={handleChange} required/>
                 </div>
               </div>              
               <div className="inputDiv">
                 <label htmlFor="password">Mật Khẩu</label>
                 <div className="input flex">
                   <FaLock  className='icon'/>
-                  <input type="password" placeholder='Nhập Mật Khẩu' name="password" autoComplete="new-password" value={credentials.password} onChange={handleChange} required/>
+                  <input type="password" placeholder='Nhập Mật Khẩu' name="password" value={credentials.password} onChange={handleChange} required/>
                 </div>
               </div>
 

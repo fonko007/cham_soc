@@ -50,7 +50,7 @@ const Sidebar = () => {
         </div>
 
         <div className="menu-section">
-          <h4>Quick Menu</h4>
+          <h4>Dịch Vụ</h4>
           <ul className="sidebar-menu">
             <li className={`menu-item ${location.pathname === '/dashboard' ? 'active' : ''}`}>
               <Link to="/dashboard" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
@@ -70,40 +70,28 @@ const Sidebar = () => {
                 <span>Bài Viết</span>
               </Link>
             </li>
-            <li className={`menu-item ${location.pathname === '/products' ? 'active' : ''}`}>
+            <li className={`menu-item ${location.pathname === '/dichvu' ? 'active' : ''}`}>
               <Link to="/products" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <RiPlantLine className="menu-icon" />
-                <span>Products</span>
+                <span>Dịch vụ</span>
               </Link>
             </li>
           </ul>
         </div>
 
         <div className="menu-section">
-          <h4>Settings</h4>
+          <h4>Hỗ Trợ</h4>
           <ul className="sidebar-menu">
-            <li className={`menu-item ${location.pathname === '/charts' ? 'active' : ''}`}>
-              <Link to="/charts" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
-                <IoStatsChartOutline className="menu-icon" />
-                <span>Charts</span>
-              </Link>
-            </li>
-            <li className={`menu-item ${location.pathname === '/trends' ? 'active' : ''}`}>
-              <Link to="/trends" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
-                <IoTrendingUpOutline className="menu-icon" />
-                <span>Trends</span>
-              </Link>
-            </li>
             <li className={`menu-item ${location.pathname === '/contact' ? 'active' : ''}`}>
               <Link to="/contact" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <HiOutlineMail className="menu-icon" />
-                <span>Contact</span>
+                <span>Liên Hệ</span>
               </Link>
             </li>
             <li className={`menu-item ${location.pathname === '/settings' ? 'active' : ''}`}>
               <Link to="/settings" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <IoSettingsOutline className="menu-icon" />
-                <span>Settings</span>
+                <span>Cài Đặt</span>
               </Link>
             </li>
           </ul>
@@ -112,8 +100,8 @@ const Sidebar = () => {
         <div className="help-center">
           <BiSupport className="help-icon" />
           <h4>Help Center</h4>
-          <p>Having trouble in Planti? Please contact us for more questions.</p>
-          <button className="contact-btn" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</button>
+          <p>Có vấn đề về dịch vụ? Liên hê cho chúng tôi</p>
+          <button className="contact-btn" onClick={() => setIsMobileMenuOpen(false)}>Liên Hệ</button>
         </div>
       </div>
     </>

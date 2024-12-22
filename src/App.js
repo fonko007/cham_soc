@@ -10,6 +10,7 @@ import Register from './Pages/Register';
 import Admin from './Pages/Admin';
 import NotFound from './Pages/Notfound';
 import Dashboard from './Pages/Dashboard';
+import News from './Pages/News';
 function App() {
   return (
     
@@ -25,6 +26,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path='/bookings' exact element={<Bookings></Bookings>}></Route>
         <Route path='/services' exact element={<Services></Services>}></Route>
+        <Route path='/news' exact element={<News></News>}></Route>
+        <Route path='/news/:title' exact element={<News></News>}></Route>
         <Route path='/admin' exact element={<Admin></Admin>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
