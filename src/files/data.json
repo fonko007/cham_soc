@@ -1,0 +1,206 @@
+{
+    "articles": [
+      {
+        "id": 1,
+        "title": "Article 1",
+        "content": "Content for article 1.",
+        "author": "Author 1",
+        "date": "2023-10-01",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article1"
+      },
+      {
+        "id": 2,
+        "title": "Article 2",
+        "content": "Content for article 2.",
+        "author": "Author 2",
+        "date": "2023-10-02",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article2"
+      },
+      {
+        "id": 4,
+        "title": "Article 4",
+        "content": "Content for article 4.",
+        "author": "Author 4",
+        "date": "2023-10-04",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article4"
+      },
+      {
+        "id": 5,
+        "title": "Article 5",
+        "content": "Content for article 5.",
+        "author": "Author 5",
+        "date": "2023-10-05",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article5"
+      },
+      {
+        "id": 6,
+        "title": "Article 6",
+        "content": "Content for article 6.",
+        "author": "Author 6",
+        "date": "2023-10-06",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article6"
+      },
+      {
+        "id": 7,
+        "title": "Article 7",
+        "content": "Content for article 7.",
+        "author": "Author 7",
+        "date": "2023-10-07",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article7"
+      },
+      {
+        "id": 8,
+        "title": "Article 8",
+        "content": "Content for article 8.",
+        "author": "Author 8",
+        "date": "2023-10-08",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article8"
+      },
+      {
+        "id": 9,
+        "title": "Article 9",
+        "content": "Content for article 9.",
+        "author": "Author 9",
+        "date": "2023-10-09",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article9"
+      },
+      {
+        "id": 10,
+        "title": "Article 10",
+        "content": "Content for article 10.",
+        "author": "Author 10",
+        "date": "2023-10-10",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article10"
+      },
+      {
+        "id": 11,
+        "title": "Article 11",
+        "content": "Content for article 11.",
+        "author": "Author 11",
+        "date": "2023-10-11",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article11"
+      },
+      {
+        "id": 12,
+        "title": "Article 12",
+        "content": "Content for article 12.",
+        "author": "Author 12",
+        "date": "2023-10-12",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article12"
+      },
+      {
+        "id": 13,
+        "title": "Article 13",
+        "content": "Content for article 13.",
+        "author": "Author 13",
+        "date": "2023-10-13",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article13"
+      },
+      {
+        "id": 14,
+        "title": "Article 14",
+        "content": "Content for article 14.",
+        "author": "Author 14",
+        "date": "2023-10-14",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article14"
+      },
+      {
+        "id": 15,
+        "title": "Article 15",
+        "content": "Content for article 15.",
+        "author": "Author 15",
+        "date": "2023-10-15",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article15"
+      },
+      {
+        "id": 16,
+        "title": "Article 16",
+        "content": "Content for article 16.",
+        "author": "Author 16",
+        "date": "2023-10-16",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article16"
+      },
+      {
+        "id": 17,
+        "title": "Article 17",
+        "content": "Content for article 17.",
+        "author": "Author 17",
+        "date": "2023-10-17",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article17"
+      },
+      {
+        "id": 18,
+        "title": "Article 18",
+        "content": "Content for article 18.",
+        "author": "Author 18",
+        "date": "2023-10-18",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article18"
+      },
+      {
+        "id": 19,
+        "title": "Article 19",
+        "content": "Content for article 19.",
+        "author": "Author 19",
+        "date": "2023-10-19",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article19"
+      },
+      {
+        "id": 20,
+        "title": "Article 20",
+        "content": "Content for article 20.",
+        "author": "Author 20",
+        "date": "2023-10-20",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article20"
+      },
+      {
+        "id": 21,
+        "title": "Article 21",
+        "content": "Content for article 21.",
+        "author": "Author 21",
+        "date": "2023-10-21",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article21"
+      },
+      {
+        "id": 22,
+        "title": "Article 22",
+        "content": "Content for article 22.",
+        "author": "Author 22",
+        "date": "2023-10-22",
+        "image": "https://placehold.co/600x400/png",
+        "link": "https://example.com/article22"
+      }
+    ],
+    "booking": [
+      {
+        "id": 1,
+        "name": "",
+        "phone": "",
+        "email": "",
+        "district": "",
+        "ward": "",
+        "hamlet": "",
+        "created_time": "2023-10-01T00:00:00Z"
+      }
+    ]
+     
+}

@@ -1,48 +1,63 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/News.css';
 import Sidebar from '../components/Sidebar';
+import axios from 'axios';
 
 function NewsPage() {
   const [news, setNews] = useState([]);
   const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesPerPage = 6; // Change this to 9 or 12
 
   useEffect(() => {
-    const apiKey = '940b0aff63aa4643bc7f8e4c3e76fcc1'; // Replace with your actual API key
-    const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+    const fetchArticles = async () => {
+      try {
+        const response = await axios.get('https://cssuckhoe.xyz/api/articles');
+        setNews(response.data.articles);
+      } catch (error) {
+        setError('Failed to load articles');
+      }
+    };
 
-    fetch(apiUrl)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return res.json();
-      })
-      .then(data => {
-        setNews(data.articles);
-      })
-      .catch(err => {
-        setError(err);
-      });
+    fetchArticles();
   }, []);
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-  
+  const indexOfLastArticle = currentPage * articlesPerPage;
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+  const currentArticles = news ? news.slice(indexOfFirstArticle, indexOfLastArticle) : [];
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
-    <div className='news-page'>
-      <Sidebar/>
-      <h1>Latest News</h1>
-      <ul>
-        {news.map(article => (
-          <li key={article.url}>
-            <h2>{article.title}</h2>
-            {article.urlToImage && <img src={article.urlToImage} alt={article.title} />}
-            <p>{article.description}</p>
-            <a href={article.url} target="_blank" rel="noopener noreferrer">Read more</a>
-          </li>
-        ))}
-      </ul>
+    <div className="news-page">
+      <Sidebar />
+      <div className="news-content">
+        {error ? (
+          <div className="error">{error}</div>
+        ) : (
+          <>
+            <ul className="articles-list">
+              {currentArticles.map((article, index) => (
+                <li key={index} className="article-block">
+                  <Link to={`/news/${article.id}`} className="article-link">
+                    <img src={article.image} alt={article.title} className="article-image" />
+                    <h2 className="article-title">{article.title}</h2>
+                    <p className="article-content">{article.content}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="pagination">
+              {Array.from({ length: Math.ceil(news.length / articlesPerPage) }, (_, index) => (
+                <button key={index} onClick={() => paginate(index + 1)}>
+                  {index + 1}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }

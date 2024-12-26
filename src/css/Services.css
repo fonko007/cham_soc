@@ -1,165 +1,86 @@
-.services-container {
-    margin-left: 250px;
-    padding: 2rem;
-    transition: all 0.3s ease;
-    min-height: 100vh;
-    background: var(--bgColor);
+.services-page {
+  margin-left: 250px;
+  padding: 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
 }
 
-/* Form styles */
-form {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--whiteColor);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.services-page.sidebar-closed {
+  margin-left: 0;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+.services-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--blackColor);
-    font-weight: 600;
-    font-size: 1rem;
+.services-content h2 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 20px;
 }
 
-.form-control {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid var(--greyText);
-    border-radius: 8px;
-    background: var(--whiteColor);
-    color: var(--blackColor);
-    font-size: 1rem;
-    transition: all 0.3s ease;
+.services-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
 }
 
-.form-control::placeholder {
-    color: var(--greyText);
+.services-content ul li {
+  margin-bottom: 10px;
 }
 
-.form-control:focus {
-    border-color: var(--primaryColor);
-    box-shadow: 0 0 0 2px rgba(94, 167, 84, 0.1);
-    outline: none;
+.services-content ul li a {
+  color: #007bff;
+  text-decoration: none;
 }
 
-textarea.form-control {
-    min-height: 120px;
-    resize: none;
+.services-content ul li a:hover {
+  text-decoration: underline;
 }
 
-.btn-primary {
-    background: var(--primaryColor);
-    color: var(--whiteColor);
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    font-size: 1rem;
-    width: 100%;
-    margin-top: 1rem;
+.services-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
-.btn-primary:hover:not(:disabled) {
-    background: var(--hoverColor);
-    transform: translateY(-2px);
+.services-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.btn-primary:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-    background: var(--greyText);
+.services-content h3, .services-content h4 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 10px;
 }
 
-/* Date and Time inputs */
-input[type="date"],
-input[type="time"] {
-    -webkit-appearance: none;
-    appearance: none;
-    color: var(--blackColor);
-    font-family: inherit;
-    background: var(--whiteColor);
+.services-content h3 span, .services-content h4 span {
+  color: #000077;
 }
 
-/* Mobile responsive styles */
+.services-content .text-block {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+iframe {
+  width: 100%;
+  height: 80vh;
+  border: none;
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 768px) {
-    .services-container {
-        margin-left: 0;
-        padding: 1rem;
-        width: 100%;
-    }
-
-    .sidebar.active ~ .services-container {
-        margin-left: 0;
-        opacity: 0.7;
-        pointer-events: none;
-    }
-
-    form {
-        padding: 1.5rem;
-        margin: 0;
-        width: 100%;
-    }
-
-    .form-group label {
-        font-size: 0.95rem;
-    }
-
-    .form-control {
-        font-size: 0.95rem;
-        padding: 0.8rem;
-    }
-
-    .btn-primary {
-        padding: 0.8rem 1.5rem;
-    }
-}
-
-/* Dark mode styles */
-@media (prefers-color-scheme: dark) {
-    .services-container {
-        background: var(--bgColor);
-    }
-
-    form {
-        background: var(--paleGreen);
-    }
-
-    .form-group label {
-        color: var(--blackColor);
-    }
-
-    .form-control {
-        background: var(--whiteColor);
-        border-color: var(--greyText);
-        color: var(--blackColor);
-    }
-
-    .form-control::placeholder {
-        color: var(--greyText);
-    }
-
-    .form-control:focus {
-        border-color: var(--primaryColor);
-        background: var(--whiteColor);
-    }
-
-    input[type="date"],
-    input[type="time"] {
-        color: var(--blackColor);
-        background: var(--whiteColor);
-    }
-
-    .btn-primary:disabled {
-        background: var(--greyText);
-        color: var(--whiteColor);
-    }
+  .services-page {
+    margin-left: 0;
+  }
 }

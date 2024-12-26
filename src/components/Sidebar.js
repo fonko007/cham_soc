@@ -52,28 +52,28 @@ const Sidebar = () => {
         <div className="menu-section">
           <h4>Dịch Vụ</h4>
           <ul className="sidebar-menu">
-            <li className={`menu-item ${location.pathname === '/dashboard' ? 'active' : ''}`}>
-              <Link to="/dashboard" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
+            <li className={`menu-item ${location.pathname === '/' ? 'active' : ''}`}>
+              <Link to="/" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <RiDashboardLine className="menu-icon" />
-                <span>Trang Chính</span>
+                <span>Trang Chủ</span>
               </Link>
             </li>
             <li className={`menu-item ${location.pathname === '/services' ? 'active' : ''}`}>
               <Link to="/services" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <RiShoppingBag3Line className="menu-icon" />
-                <span>Đặt Lịch</span>
+                <span>Dịch vụ chăm sóc người cao tuổi</span>
               </Link>
             </li>
-            <li className={`menu-item ${location.pathname === '/news' ? 'active' : ''}`}>
+            <li className={`menu-item ${/^\/news(\/\d+)?$/.test(location.pathname) ? 'active' : ''}`}>
               <Link to="/news" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <RiCompassDiscoverLine className="menu-icon" />
-                <span>Bài Viết</span>
+                <span>Tin tức về sức khỏe</span>
               </Link>
             </li>
-            <li className={`menu-item ${location.pathname === '/dichvu' ? 'active' : ''}`}>
-              <Link to="/products" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
+            <li className={`menu-item ${location.pathname === '/camera' ? 'active' : ''}`}>
+              <Link to="/camera" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <RiPlantLine className="menu-icon" />
-                <span>Dịch vụ</span>
+                <span>Quan sát người thân</span>
               </Link>
             </li>
           </ul>
