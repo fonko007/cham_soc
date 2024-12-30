@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import '../css/Services.css';
 import axios from 'axios';
@@ -10,10 +11,10 @@ const Services = () => {
     sdt: '',
     address: '',
     date: '',
-    time: '',
     ghichu: '',
-    status: 'Todo'
+    status: 'cần xác nhận',
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,22 +24,29 @@ const Services = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://cssuckhoe.xyz/api/bookings', formData, {
+      const response = await axios.post('https://cssuckhoe.xyz/api/bookings', {
+        ...formData,
+        create_at: new Date().toISOString().slice(0, 19).replace('T', ' ')
+      }, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
 
       if (response.status === 200) {
-        alert('Data saved successfully');
+        alert('Lưu dữ liệu thành công');
       } else {
-        alert('Failed to save data');
-        console.error('Error saving data:', response.statusText);
+        alert('Lưu dữ liệu thất bại');
+        console.error('Lỗi khi lưu dữ liệu:', response.statusText);
       }
     } catch (error) {
-      alert('Failed to save data');
-      console.error('Error saving data:', error);
+      alert('Lưu dữ liệu thất bại');
+      console.error('Lỗi khi lưu dữ liệu:', error);
     }
+  };
+
+  const handleContact = () => {
+    navigate(`/contact`);
   };
 
   return (
@@ -67,14 +75,11 @@ const Services = () => {
           <input type="date" name="date" value={formData.date} onChange={handleChange} required />
         </label>
         <label>
-          Thời gian:
-          <input type="time" name="time" value={formData.time} onChange={handleChange} required />
-        </label>
-        <label>
           Ghi chú:
           <textarea name="ghichu" value={formData.ghichu} onChange={handleChange} required />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit">Gửi</button>
+        <button type="button" onClick={handleContact}>Liên hệ</button>
       </form>
     </div>
   );

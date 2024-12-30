@@ -8,7 +8,7 @@ function NewsPage() {
   const [news, setNews] = useState([]);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const articlesPerPage = 6; // Change this to 9 or 12
+  const articlesPerPage = 9; // Change this to 9 or 12
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -22,6 +22,13 @@ function NewsPage() {
 
     fetchArticles();
   }, []);
+
+  const truncateContent = (content, maxLength) => {
+    if (content.length > maxLength) {
+      return content.substring(0, maxLength) + '...';
+    }
+    return content;
+  };
 
   const indexOfLastArticle = currentPage * articlesPerPage;
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
@@ -43,7 +50,7 @@ function NewsPage() {
                   <Link to={`/news/${article.id}`} className="article-link">
                     <img src={article.image} alt={article.title} className="article-image" />
                     <h2 className="article-title">{article.title}</h2>
-                    <p className="article-content">{article.content}</p>
+                    <p className="article-content">{truncateContent(article.content, 100)}</p>
                   </Link>
                 </li>
               ))}

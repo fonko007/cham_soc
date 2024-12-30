@@ -36,10 +36,13 @@ function ArticlePage() {
       <div className="article-content">
         <h1>{article.title}</h1>
         <div className="article-meta">
-          <span>By {article.author}</span> | <span>{new Date(article.date).toLocaleDateString()}</span>
+          <span>Tạo Ngày {new Date(article.create_time).toLocaleDateString()}</span>
+          <span>Tác giả: {article.author}</span> {/* Display author */}
         </div>
         {article.image && <img src={article.image} alt={article.title} className="article-image" />}
-        <p>{article.content}</p>
+        <p className="article-text">{article.content.split('\n').map((line, index) => (
+          <span key={index}>{line}<br /></span>
+        ))}</p>
         {article.link && <a href={article.link} target="_blank" rel="noopener noreferrer">Read more</a>}
       </div>
     </div>

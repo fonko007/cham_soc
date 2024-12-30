@@ -1,6 +1,5 @@
-
 .admin-dashboard {
-    margin-left: 250px;
+  margin-left: 250px;
   display: flex;
 }
 
@@ -23,8 +22,123 @@ th {
   background-color: #f2f2f2;
   text-align: left;
 }
-@media screen and (max-width: 768px) {
-    .article-page {
-      margin-left: 0;
+
+.status-red {
+  background-color: #ffcccc;
 }
+
+.status-yellow {
+  background-color: #ffffcc;
+}
+
+.status-green {
+  background-color: #ccffcc;
+}
+
+.status-blocks {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.status-block {
+  flex: 1;
+  margin: 0 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.notification {
+  background-color: #ffeb3b;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.edit-article-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edit-article-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.edit-article-form input,
+.edit-article-form textarea,
+.create-article-form input,
+.create-article-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.edit-article-form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-article-form button:hover {
+  background-color: #0056b3;
+}
+
+.create-article-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.create-article-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.create-article-form input,
+.create-article-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.create-article-form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-article-form button:hover {
+  background-color: #0056b3;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+  .admin-dashboard {
+    margin-left: 0;
+  }
 }

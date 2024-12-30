@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import './Sidebar.css';
 import { RiDashboardLine, RiShoppingBag3Line, RiCompassDiscoverLine, RiPlantLine, RiMenuLine, RiCloseLine } from 'react-icons/ri';
-import { IoSettingsOutline, IoStatsChartOutline, IoTrendingUpOutline } from 'react-icons/io5';
 import { BiSupport } from 'react-icons/bi';
-import { HiOutlineMail } from 'react-icons/hi';
+import axios from 'axios';
 
 const Sidebar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false); // Add state for admin
   const location = useLocation();
 
   // Close sidebar when screen size changes to desktop
@@ -21,6 +21,26 @@ const Sidebar = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    // Check if user has admin permissions using API
+    const checkAdmin = async () => {
+      const email = localStorage.getItem('email');
+      try {
+        const response = await axios.post('https://cssuckhoe.xyz/api/check-permission', { email });
+        if (response.data.isAdmin === 'admin') {
+          setIsAdmin(true);
+        } else {
+          setIsAdmin(false);
+        }
+      } catch (error) {
+        console.error('Error checking permissions:', error);
+        setIsAdmin(false);
+      }
+    };
+
+    checkAdmin();
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -79,23 +99,31 @@ const Sidebar = () => {
           </ul>
         </div>
 
-        <div className="menu-section">
-          <h4>Hỗ Trợ</h4>
-          <ul className="sidebar-menu">
-            <li className={`menu-item ${location.pathname === '/contact' ? 'active' : ''}`}>
-              <Link to="/contact" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
-                <HiOutlineMail className="menu-icon" />
-                <span>Liên Hệ</span>
-              </Link>
-            </li>
-            <li className={`menu-item ${location.pathname === '/settings' ? 'active' : ''}`}>
-              <Link to="/settings" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
-                <IoSettingsOutline className="menu-icon" />
-                <span>Cài Đặt</span>
-              </Link>
-            </li>
-          </ul>
-        </div>
+        {isAdmin && (
+          <div className="menu-section">
+            <h4>Admin</h4>
+            <ul className="sidebar-menu">
+              <li className={`menu-item ${location.pathname === '/admin/dashboard' ? 'active' : ''}`}>
+                <Link to="/admin/dashboard" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
+                  <RiDashboardLine className="menu-icon" />
+                  <span>Quản lí lịch hẹn</span>
+                </Link>
+              </li>
+              <li className={`menu-item ${location.pathname === '/admin/carticles' ? 'active' : ''}`}>
+                <Link to="/admin/carticles" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
+                  <RiPlantLine className="menu-icon" />
+                  <span>Tạo bài viết</span>
+                </Link>
+              </li>
+              <li className={`menu-item ${location.pathname === '/admin/articlesmanage' ? 'active' : ''}`}>
+                <Link to="/admin/articlesmanage" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
+                  <RiPlantLine className="menu-icon" />
+                  <span>Quản lý bài viết</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
 
         <div className="help-center">
           <BiSupport className="help-icon" />
