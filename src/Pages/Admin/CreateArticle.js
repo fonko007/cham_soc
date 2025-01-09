@@ -17,7 +17,7 @@ const CreateArticle = () => {
     e.preventDefault();
     try {
       await axios.post('https://cssuckhoe.xyz/api/articles', article);
-      navigate('/admin/articles');
+      navigate('/admin/articlesmanage');
     } catch (error) {
       console.error('Lỗi tạo bài viết:', error);
     }

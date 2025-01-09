@@ -29,7 +29,7 @@ function App() {
         <Route path='/services' exact element={<Services></Services>}></Route>
         <Route path='/contact' exact element={<Contact></Contact>}></Route>
         <Route path='/news' exact element={<News></News>}></Route>
-        <Route path='/admin/carticles' exact element={<CreateArticle></CreateArticle>}/>
+        <Route path='/admin/articles' exact element={<CreateArticle></CreateArticle>}/>
         <Route path='/admin/articlesmanage' exact element={<ArticleManagement></ArticleManagement>}></Route>
         <Route path='/news/:id' exact element={<ArticlePage></ArticlePage>}></Route>
         <Route path='/servicesinfo' exact element={<ServicesInfo></ServicesInfo>}></Route>

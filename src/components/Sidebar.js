@@ -109,8 +109,8 @@ const Sidebar = () => {
                   <span>Quản lí lịch hẹn</span>
                 </Link>
               </li>
-              <li className={`menu-item ${location.pathname === '/admin/carticles' ? 'active' : ''}`}>
-                <Link to="/admin/carticles" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <li className={`menu-item ${location.pathname === '/admin/articles' ? 'active' : ''}`}>
+                <Link to="/admin/articles" className="menu-link" onClick={() => setIsMobileMenuOpen(false)}>
                   <RiPlantLine className="menu-icon" />
                   <span>Tạo bài viết</span>
                 </Link>

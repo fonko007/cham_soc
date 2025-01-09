@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar';
 import '../../css/AdminDashboard.css';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AdminDashboard = () => {
   const [bookings, setBookings] = useState([]);
@@ -55,7 +57,9 @@ const AdminDashboard = () => {
     try {
       await axios.put(`https://cssuckhoe.xyz/api/bookings/${id}`, { status });
       setBookings(bookings.map(booking => booking.id === id ? { ...booking, status } : booking));
+      toast.success('Cập nhật trạng thái thành công');
     } catch (error) {
+      toast.error('Lỗi cập nhật trạng thái');
       console.error('Lỗi cập nhật trạng thái:', error);
     }
   };
@@ -65,7 +69,9 @@ const AdminDashboard = () => {
       try {
         await axios.delete(`https://cssuckhoe.xyz/api/bookings/${id}`);
         setBookings(bookings.filter(booking => booking.id !== id));
+        toast.success('Xóa lịch hẹn thành công');
       } catch (error) {
+        toast.error('Lỗi xóa lịch hẹn');
         console.error('Lỗi xóa lịch hẹn:', error);
       }
     }
@@ -160,6 +166,7 @@ const AdminDashboard = () => {
             ))}
           </tbody>
         </table>
+        <ToastContainer />
       </div>
     </div>
   );

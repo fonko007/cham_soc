@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import '../css/Services.css';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Services = () => {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     fullname: '',
     email: '',
     sdt: '',
@@ -13,7 +15,9 @@ const Services = () => {
     date: '',
     ghichu: '',
     status: 'cần xác nhận',
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -34,13 +38,14 @@ const Services = () => {
       });
 
       if (response.status === 200) {
-        alert('Lưu dữ liệu thành công');
+        toast.success('Lưu dữ liệu thành công');
+        setFormData(initialFormData); // Clear the form
       } else {
-        alert('Lưu dữ liệu thất bại');
+        toast.error('Lưu dữ liệu thất bại');
         console.error('Lỗi khi lưu dữ liệu:', response.statusText);
       }
     } catch (error) {
-      alert('Lưu dữ liệu thất bại');
+      toast.error('Lưu dữ liệu thất bại');
       console.error('Lỗi khi lưu dữ liệu:', error);
     }
   };
@@ -81,6 +86,7 @@ const Services = () => {
         <button type="submit">Gửi</button>
         <button type="button" onClick={handleContact}>Liên hệ</button>
       </form>
+      <ToastContainer />
     </div>
   );
 };

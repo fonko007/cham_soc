@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Sidebar from '../../components/Sidebar';
 import '../../css/AdminDashboard.css';
 
@@ -16,6 +18,7 @@ const EditArticle = () => {
         setArticle(response.data); // Fix data structure
       } catch (error) {
         console.error('Lỗi lấy bài viết:', error);
+        toast.error('Lỗi lấy bài viết');
       }
     };
 
@@ -32,8 +35,10 @@ const EditArticle = () => {
     try {
       await axios.put(`https://cssuckhoe.xyz/api/articles/${id}`, article);
       navigate('/admin/articlesmanage');
+      toast.success('Cập nhật bài viết thành công');
     } catch (error) {
       console.error('Lỗi cập nhật bài viết:', error);
+      toast.error('Lỗi cập nhật bài viết');
     }
   };
 

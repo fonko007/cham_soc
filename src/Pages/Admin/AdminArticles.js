@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar';
 import '../../css/AdminDashboard.css';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ArticleManagement = () => {
   const [articles, setArticles] = useState([]);
@@ -44,7 +46,9 @@ const ArticleManagement = () => {
       try {
         await axios.delete(`https://cssuckhoe.xyz/api/articles/${id}`); // Thay đổi API endpoint cho phù hợp
         setArticles(articles.filter(article => article.id !== id));
+        toast.success('Xóa bài viết thành công');
       } catch (error) {
+        toast.error('Lỗi xóa bài viết');
         console.error('Lỗi xóa bài viết:', error);
       }
     }
@@ -55,7 +59,7 @@ const ArticleManagement = () => {
       <Sidebar />
       <div className="dashboard-content">
         <h1>Quản lý bài viết</h1>
-        <button className="button" onClick={() => navigate('/admin/articles/create')}>Tạo bài viết mới</button> {/* Add button to create new article */}
+        <button className="button" onClick={() => navigate('/admin/articles/')}>Tạo bài viết mới</button> {/* Add button to create new article */}
         <table>
           <thead>
             <tr>
@@ -80,6 +84,7 @@ const ArticleManagement = () => {
           </tbody>
         </table>
       </div>
+      <ToastContainer />
     </div>
   );
 };

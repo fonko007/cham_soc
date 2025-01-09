@@ -1,10 +1,14 @@
-.createarticle {
+.admin-page {
   margin-left: 250px;
   padding: 20px;
   background: #f9f9f9;
   min-height: 100vh;
   display: flex;
   transition: margin-left 0.3s ease;
+}
+
+.admin-page.sidebar-closed {
+  margin-left: 0;
 }
 
 .admin-content {
@@ -15,38 +19,38 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.admin-content-title {
+.admin-content h1 {
   margin-bottom: 20px;
   color: #2c3e50;
 }
 
-.admin-form-group {
+.form-group {
   margin-bottom: 20px;
 }
 
-.admin-form-label {
+.form-group label {
   display: block;
   margin-bottom: 5px;
   color: #2c3e50;
 }
 
-.admin-form-input,
-.admin-form-textarea {
+.form-group input,
+.form-group textarea {
   width: calc(100% - 22px);
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.admin-form-input-file {
+.form-group input[type="file"] {
   padding: 5px;
 }
 
-.admin-form-textarea {
+.form-group textarea {
   height: 200px;
 }
 
-.admin-button {
+button {
   padding: 10px 20px;
   background-color: #3498db;
   color: #fff;
@@ -55,17 +59,6 @@
   cursor: pointer;
 }
 
-.admin-button:hover {
+button:hover {
   background-color: #2980b9;
-}
-
-@media screen and (max-width: 768px) {
-  .createarticle {
-    margin-left: 0;
-    flex-direction: column;
-  }
-
-  .admin-content {
-    margin-top: 20px;
-  }
 }
